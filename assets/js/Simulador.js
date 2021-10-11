@@ -37,10 +37,6 @@ class Simulador {
       somaDeJurosDaEmpresaPorParcela +
       jurosDaBandeira;
 
-    console.log(
-      somaDeJurosDaEmpresaPorParcela, taxasPorValor[this.valor], jurosEmPorcentagem, jurosDaBandeira
-    );
-
     this.jurosEmPorcentagem = jurosEmPorcentagem;
   }
 
