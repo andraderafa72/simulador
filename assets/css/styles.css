@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif;
   background: #f2f2f2;
 }
 
@@ -116,7 +116,6 @@ span {
 .flag-radio input#group-1:checked ~ label[for="group-1"], .flag-radio input#group-2:checked ~ label[for="group-2"] {
   background-color: #00c039;
   color: #fff;
-  font-weight: 600;
 }
 
 .flag-radio label[for="group-1"] {
@@ -149,6 +148,26 @@ span {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.limite .wrapper {
+  width: calc(50% - .5rem);
+}
+
+.limite .wrapper input {
+  margin-top: 0.5rem;
+}
+
+.limite .wrapper + .wrapper span, .limite .wrapper + .wrapper p {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.limite .wrapper + .wrapper p {
+  color: #00c039;
+  font-size: 1.5rem;
 }
 
 .recebimento {
@@ -226,10 +245,13 @@ span {
 .container .right .main-info span {
   text-align: center;
   margin-bottom: 0;
+  font-weight: normal;
 }
 
 .container .right .main-info h2 {
   font-size: 2.5rem;
+  font-family: 'Nunito';
+  font-weight: 800;
 }
 
 .container .right .wrapper {
@@ -300,5 +322,22 @@ span {
 
 .slider span strong {
   color: #00c039;
+}
+
+@media (max-width: 890px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 600px;
+  }
+  .container .left, .container .right {
+    width: 100%;
+  }
+  .container .left {
+    border-bottom: 1px solid #ecf1f4;
+    border-right: none;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
