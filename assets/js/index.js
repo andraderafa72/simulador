@@ -1,6 +1,9 @@
 const inputParcelas = document.querySelector(".input-parcelas");
 const inputValor = document.querySelector(".input-valor");
 const radioButtons = document.querySelectorAll('.flag-radio input')
+const limiteInput = document.querySelector('.limite-input')
+
+const limiteDisponivel = document.querySelector('.disponivel')
 
 const valorPago = document.querySelector(".main-info h2");
 const taxaAoMes = document.querySelector(".wrapper .content .taxa");
@@ -17,6 +20,11 @@ const simulador = new Simulador(12, "Visa", 1000);
 simulador.calcularPorcentagemDeJuros();
 simulador.calcularJurosSobreValor();
 renderizarSimulação();
+
+limiteInput.addEventListener("input", (e) => {
+  const valor = Number(e.target.value) * 12
+  limiteDisponivel.innerHTML = `R$${valor.toFixed(2).replace('.', ',')}`
+});
 
 inputParcelas.addEventListener("input", (e) => {
   simulador.setNumeroDeParcelas(e.target.value);

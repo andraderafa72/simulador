@@ -22,7 +22,7 @@ input[type="number"] {
 input[type="number"]:focus {
   outline: none;
   border: 2px solid #00c039;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 input[type="range"] {
@@ -30,17 +30,17 @@ input[type="range"] {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type='range'] {
+  input[type="range"] {
     -webkit-appearance: none;
     background-color: #ecf1f4;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     cursor: pointer;
   }
-  input[type='range']::-webkit-slider-runnable-track {
+  input[type="range"]::-webkit-slider-runnable-track {
     height: 5px;
     -webkit-appearance: none;
   }
-  input[type='range']::-webkit-slider-thumb {
+  input[type="range"]::-webkit-slider-thumb {
     width: 15px;
     -webkit-appearance: none;
     height: 15px;
@@ -50,12 +50,6 @@ input[type="range"] {
     -webkit-transform: translateY(-5px);
             transform: translateY(-5px);
   }
-}
-
-span {
-  width: 100%;
-  margin-bottom: 1rem;
-  font-weight: 600;
 }
 
 .container {
@@ -74,6 +68,12 @@ span {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.container span {
+  width: 100%;
+  margin-bottom: 1rem;
+  font-weight: 500;
 }
 
 .container .right {
@@ -113,17 +113,18 @@ span {
   display: none;
 }
 
-.flag-radio input#group-1:checked ~ label[for="group-1"], .flag-radio input#group-2:checked ~ label[for="group-2"] {
+.flag-radio input#group-1:checked ~ label[for="group-1"],
+.flag-radio input#group-2:checked ~ label[for="group-2"] {
   background-color: #00c039;
   color: #fff;
 }
 
 .flag-radio label[for="group-1"] {
-  border-radius: .5rem 0 0 .5rem;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .flag-radio label[for="group-2"] {
-  border-radius: 0 .5rem .5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .flag-radio label {
@@ -139,7 +140,7 @@ span {
   width: 50%;
   cursor: pointer;
   border: 2px solid #00c039;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .limite {
@@ -152,14 +153,15 @@ span {
 }
 
 .limite .wrapper {
-  width: calc(50% - .5rem);
+  width: calc(50% - 0.5rem);
 }
 
 .limite .wrapper input {
   margin-top: 0.5rem;
 }
 
-.limite .wrapper + .wrapper span, .limite .wrapper + .wrapper p {
+.limite .wrapper + .wrapper span,
+.limite .wrapper + .wrapper p {
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -191,7 +193,8 @@ span {
   display: none;
 }
 
-.recebimento .wrapper input#rec-1:checked ~ label[for="rec-1"]::before, .recebimento .wrapper input#rec-2:checked ~ label[for="rec-2"]::before {
+.recebimento .wrapper input#rec-1:checked ~ label[for="rec-1"]::before,
+.recebimento .wrapper input#rec-2:checked ~ label[for="rec-2"]::before {
   background: #00c039;
   border: 3px solid #fff;
 }
@@ -201,9 +204,9 @@ span {
 }
 
 .recebimento .wrapper label::before {
-  content: '';
-  width: .75rem;
-  height: .75rem;
+  content: "";
+  width: 0.75rem;
+  height: 0.75rem;
   position: absolute;
   left: -1.5rem;
   top: 50%;
@@ -250,7 +253,7 @@ span {
 
 .container .right .main-info h2 {
   font-size: 2.5rem;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-weight: 800;
 }
 
@@ -266,7 +269,8 @@ span {
   gap: 1rem;
 }
 
-.container .right .wrapper .content, .container .right .wrapper .content-large {
+.container .right .wrapper .content,
+.container .right .wrapper .content-large {
   -webkit-box-shadow: 0 4px 24px 0 rgba(11, 11, 11, 0.12);
           box-shadow: 0 4px 24px 0 rgba(11, 11, 11, 0.12);
   display: -webkit-box;
@@ -286,19 +290,21 @@ span {
   border-radius: 1rem;
 }
 
-.container .right .wrapper .content span, .container .right .wrapper .content-large span {
+.container .right .wrapper .content span,
+.container .right .wrapper .content-large span {
   text-align: center;
   margin-bottom: 0;
   font-weight: normal;
 }
 
-.container .right .wrapper .content p, .container .right .wrapper .content-large p {
+.container .right .wrapper .content p,
+.container .right .wrapper .content-large p {
   font-weight: 600;
   font-size: 1.5rem;
 }
 
 .container .right .wrapper .content {
-  width: calc(50% - .5rem);
+  width: calc(50% - 0.5rem);
 }
 
 .container .right .wrapper .content-large {
@@ -312,7 +318,7 @@ span {
 .container .right .wrapper .content-large svg {
   width: 2.5rem;
   height: 2.5rem;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .container .right .wrapper .content-large p {
@@ -322,6 +328,7 @@ span {
 
 .slider span strong {
   color: #00c039;
+  font-weight: 500;
 }
 
 @media (max-width: 890px) {
@@ -332,12 +339,27 @@ span {
             flex-direction: column;
     max-width: 600px;
   }
-  .container .left, .container .right {
+  .container span {
+    font-size: 0.9rem;
+  }
+  .container .left,
+  .container .right {
     width: 100%;
+    padding: 2rem;
   }
   .container .left {
     border-bottom: 1px solid #ecf1f4;
     border-right: none;
+  }
+  .recebimento {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .recebimento .wrapper + .wrapper {
+    margin-left: 0;
+    margin-top: 1rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

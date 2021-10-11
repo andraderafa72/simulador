@@ -17,10 +17,10 @@ input[type="number"] {
   padding: 0.85rem 1rem;
   font-size: 1rem;
 
-  &:focus{
+  &:focus {
     outline: none;
     border: 2px solid #00c039;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
   }
 }
 input[type="range"] {
@@ -28,20 +28,20 @@ input[type="range"] {
   // accent-color: #66ff94;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  input[type='range'] {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="range"] {
     -webkit-appearance: none;
     background-color: #ecf1f4;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     cursor: pointer;
   }
-  
-  input[type='range']::-webkit-slider-runnable-track {
+
+  input[type="range"]::-webkit-slider-runnable-track {
     height: 5px;
     -webkit-appearance: none;
   }
-  
-  input[type='range']::-webkit-slider-thumb {
+
+  input[type="range"]::-webkit-slider-thumb {
     width: 15px;
     -webkit-appearance: none;
     height: 15px;
@@ -50,12 +50,6 @@ input[type="range"] {
     border-radius: 100%;
     transform: translateY(-5px);
   }
-}
-
-span {
-  width: 100%;
-  margin-bottom: 1rem;
-  font-weight: 600;
 }
 
 .container {
@@ -69,10 +63,15 @@ span {
   align-items: center;
   justify-content: space-between;
 
-  .right{
+  span {
+    width: 100%;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .right {
     width: 50%;
     padding: 3rem 3rem 3rem 2rem;
-
   }
   .left {
     width: 50%;
@@ -95,17 +94,18 @@ span {
   input {
     display: none;
 
-    &#group-1:checked ~ label[for="group-1"],  &#group-2:checked ~ label[for="group-2"] {
+    &#group-1:checked ~ label[for="group-1"],
+    &#group-2:checked ~ label[for="group-2"] {
       background-color: #00c039;
       color: #fff;
     }
   }
 
-  label[for="group-1"]{
-    border-radius: .5rem 0 0 .5rem;
+  label[for="group-1"] {
+    border-radius: 0.5rem 0 0 0.5rem;
   }
-  label[for="group-2"]{
-    border-radius: 0 .5rem .5rem 0;
+  label[for="group-2"] {
+    border-radius: 0 0.5rem 0.5rem 0;
   }
   label {
     display: inline-flex;
@@ -114,8 +114,7 @@ span {
     width: 50%;
     cursor: pointer;
     border: 2px solid #00c039;
-    padding: .5rem 1rem;
-
+    padding: 0.5rem 1rem;
   }
 }
 
@@ -123,28 +122,28 @@ span {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  
-  .wrapper{
-    width: calc(50% - .5rem);
-    input{
-      margin-top: 0.5rem;
-    }  
 
-    & + .wrapper{
-      span, p{
+  .wrapper {
+    width: calc(50% - 0.5rem);
+    input {
+      margin-top: 0.5rem;
+    }
+
+    & + .wrapper {
+      span,
+      p {
         display: inline-block;
         width: 100%;
         text-align: center;
       }
-      
-      p{
+
+      p {
         color: #00c039;
         font-size: 1.5rem;
       }
     }
   }
 }
-
 
 .recebimento {
   display: flex;
@@ -154,27 +153,28 @@ span {
     padding-left: 1.5rem;
     width: auto;
 
-    & + .wrapper{
+    & + .wrapper {
       margin-left: 3rem;
     }
 
-    input{
+    input {
       display: none;
 
-      &#rec-1:checked ~ label[for="rec-1"], &#rec-2:checked ~ label[for="rec-2"]{
-        &::before{
+      &#rec-1:checked ~ label[for="rec-1"],
+      &#rec-2:checked ~ label[for="rec-2"] {
+        &::before {
           background: #00c039;
           border: 3px solid #fff;
         }
       }
     }
 
-    label{
+    label {
       position: relative;
-      &::before{
-        content: '';
-        width: .75rem;
-        height: .75rem;
+      &::before {
+        content: "";
+        width: 0.75rem;
+        height: 0.75rem;
         position: absolute;
         left: -1.5rem;
         top: 50%;
@@ -187,9 +187,9 @@ span {
   }
 }
 
-.container .right{
+.container .right {
   padding-left: 2rem;
-  .main-info{
+  .main-info {
     width: 100%;
     background: #00c039;
     color: #fff;
@@ -201,23 +201,24 @@ span {
     padding: 2rem 0;
     box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.08);
     margin-bottom: 1.5rem;
-    span{
+    span {
       text-align: center;
       margin-bottom: 0;
       font-weight: normal;
     }
-    h2{
+    h2 {
       font-size: 2.5rem;
-      font-family: 'Nunito';
+      font-family: "Nunito";
       font-weight: 800;
     }
   }
-  .wrapper{
+  .wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 1rem;
-    .content, .content-large {
+    .content,
+    .content-large {
       box-shadow: 0 4px 24px 0 rgba(11, 11, 11, 0.12);
       display: flex;
       align-items: center;
@@ -226,33 +227,33 @@ span {
       padding: 1.5rem;
       border-radius: 1rem;
 
-      span{
+      span {
         text-align: center;
         margin-bottom: 0;
         font-weight: normal;
       }
 
-      p{
+      p {
         font-weight: 600;
         font-size: 1.5rem;
       }
     }
 
-    .content{
-      width: calc(50% - .5rem);
+    .content {
+      width: calc(50% - 0.5rem);
     }
 
-    .content-large{
+    .content-large {
       width: 100%;
       flex-direction: row;
 
-      svg{
+      svg {
         width: 2.5rem;
         height: 2.5rem;
-        margin-right: .5rem;
+        margin-right: 0.5rem;
       }
 
-      p{
+      p {
         font-size: 1rem;
         font-weight: normal;
       }
@@ -260,22 +261,36 @@ span {
   }
 }
 
-.slider span strong{
+.slider span strong {
   color: #00c039;
+  font-weight: 500;
 }
 
-@media (max-width: 890px){
-  .container{
+@media (max-width: 890px) {
+  .container {
     flex-direction: column;
     max-width: 600px;
-
-    .left, .right{
+    span {
+      font-size: 0.9rem;
+    }
+    .left,
+    .right {
       width: 100%;
+      padding: 2rem;
     }
 
-    .left{
+    .left {
       border-bottom: 1px solid #ecf1f4;
       border-right: none;
+    }
+  }
+
+  .recebimento {
+    flex-direction: column;
+
+    .wrapper + .wrapper {
+      margin-left: 0;
+      margin-top: 1rem;
     }
   }
 }
