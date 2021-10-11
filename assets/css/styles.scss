@@ -33,6 +33,7 @@ input[type="range"] {
     -webkit-appearance: none;
     background-color: #ecf1f4;
     border-radius: .5rem;
+    cursor: pointer;
   }
   
   input[type='range']::-webkit-slider-runnable-track {
@@ -45,6 +46,7 @@ input[type="range"] {
     -webkit-appearance: none;
     height: 15px;
     background: #00c039;
+    cursor: pointer;
     border-radius: 100%;
     transform: translateY(-5px);
   }
@@ -61,7 +63,7 @@ span {
   max-width: 968px;
   margin: 3rem auto;
   border-radius: 1rem;
-  box-shadow: 0px 8px 64px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 8px 32px 0 rgba(0, 0, 0, 0.08);
 
   display: flex;
   align-items: center;
@@ -93,28 +95,28 @@ span {
   input {
     display: none;
 
-    &#group-1:checked ~ label[for="group-1"] {
+    &#group-1:checked ~ label[for="group-1"],  &#group-2:checked ~ label[for="group-2"] {
       background-color: #00c039;
-    }
-    &#group-2:checked ~ label[for="group-2"] {
-      background-color: #00c039;
+      color: #fff;
+      font-weight: 500;
     }
   }
 
-  svg {
-    width: 4rem;
-    height: 4rem;
+  label[for="group-1"]{
+    border-radius: .5rem 0 0 .5rem;
   }
-
+  label[for="group-2"]{
+    border-radius: 0 .5rem .5rem 0;
+  }
   label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
     cursor: pointer;
     border: 2px solid #00c039;
-    border-radius: 0.2rem;
-    padding: 0 0.5rem;
+    padding: .5rem 1rem;
 
-    & + label {
-      margin-left: 0.75rem;
-    }
   }
 }
 
@@ -192,8 +194,9 @@ span {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 1rem;
     .content, .content-large {
-      box-shadow: 0 4px 64px 0 rgba(11, 11, 11, 0.12);
+      box-shadow: 0 4px 24px 0 rgba(11, 11, 11, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -214,12 +217,18 @@ span {
     }
 
     .content{
-      width: calc(50% - .75rem);
+      width: calc(50% - .5rem);
     }
 
     .content-large{
       width: 100%;
-      margin-top: 1.5rem;
+      flex-direction: row;
+
+      svg{
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: .5rem;
+      }
 
       p{
         font-size: 1rem;

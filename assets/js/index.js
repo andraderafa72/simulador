@@ -3,6 +3,8 @@ const inputValor = document.querySelector(".input-valor");
 const valorPago = document.querySelector(".main-info h2");
 const taxaAoMes = document.querySelector(".wrapper .content .taxa");
 const tarifaAoMes = document.querySelector(".wrapper .content .tarifa");
+const tarifaTotal = document.querySelector(".wrapper .content .tarifa-total");
+const cliente = document.querySelector(".wrapper .content .cliente");
 const displayValor = document.querySelector(".slider span .display-valor");
 const displayParcelas = document.querySelector(
   ".slider span .display-parcelas"
@@ -42,6 +44,14 @@ function renderizarSimulação() {
   ).toFixed(2)}%`;
   tarifaAoMes.innerHTML = `R$${String((
     simulador.jurosEmReais / simulador.numeroDeParcelas
+  ).toFixed(2)).replace('.', ',')}`;
+
+  cliente.innerHTML = `R$${String((
+    simulador.valor - simulador.jurosEmReais
+  ).toFixed(2)).replace('.', ',')}`;
+  
+  tarifaTotal.innerHTML = `R$${String((
+    simulador.jurosEmReais
   ).toFixed(2)).replace('.', ',')}`;
 
   displayParcelas.innerHTML = `${simulador.numeroDeParcelas}x`;
