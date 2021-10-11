@@ -17,6 +17,10 @@ class Simulador {
   // 5, 5000
   calcularPorcentagemDeJuros() {
     if (this.numeroDeParcelas < 3) {
+      if(this.bandeira === 'Elo'){
+        this.jurosEmPorcentagem = taxasPorValor[this.valor] + bandeira[this.numeroDeParcelas];
+        return
+      }
       this.jurosEmPorcentagem = taxasPorValor[this.valor];
       return;
     }
@@ -34,7 +38,7 @@ class Simulador {
       jurosDaBandeira;
 
     console.log(
-      somaDeJurosDaEmpresaPorParcela, jurosEmPorcentagem, jurosDaBandeira
+      somaDeJurosDaEmpresaPorParcela, taxasPorValor[this.valor], jurosEmPorcentagem, jurosDaBandeira
     );
 
     this.jurosEmPorcentagem = jurosEmPorcentagem;
@@ -84,6 +88,7 @@ const juros = {
 };
 
 const bandeira = {
+  2: 1.19,
   3: 1.19,
   4: 1.18,
   5: 1.18,

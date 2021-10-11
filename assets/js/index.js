@@ -12,7 +12,7 @@ const displayParcelas = document.querySelector(
   ".slider span .display-parcelas"
 );
 
-const simulador = new Simulador(12, "Visa", 1000);
+const simulador = new Simulador(12, "Elo", 1000);
 
 simulador.calcularPorcentagemDeJuros();
 simulador.calcularJurosSobreValor();
