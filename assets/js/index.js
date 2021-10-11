@@ -18,7 +18,7 @@ simulador.calcularPorcentagemDeJuros();
 simulador.calcularJurosSobreValor();
 renderizarSimulação();
 
-inputParcelas.addEventListener("change", (e) => {
+inputParcelas.addEventListener("input", (e) => {
   simulador.setNumeroDeParcelas(e.target.value);
   simulador.calcularPorcentagemDeJuros();
   simulador.calcularJurosSobreValor();
@@ -26,7 +26,7 @@ inputParcelas.addEventListener("change", (e) => {
   renderizarSimulação();
 });
 
-inputValor.addEventListener("change", (e) => {
+inputValor.addEventListener("input", (e) => {
   simulador.setValor(conversorDeRangeParaValor[e.target.value]);
   simulador.calcularPorcentagemDeJuros();
   simulador.calcularJurosSobreValor();
