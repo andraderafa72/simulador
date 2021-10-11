@@ -116,7 +116,7 @@ span {
 .flag-radio input#group-1:checked ~ label[for="group-1"], .flag-radio input#group-2:checked ~ label[for="group-2"] {
   background-color: #00c039;
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .flag-radio label[for="group-1"] {
