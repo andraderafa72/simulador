@@ -1,5 +1,7 @@
 const inputParcelas = document.querySelector(".input-parcelas");
 const inputValor = document.querySelector(".input-valor");
+const radioButtons = document.querySelectorAll('.flag-radio input')
+
 const valorPago = document.querySelector(".main-info h2");
 const taxaAoMes = document.querySelector(".wrapper .content .taxa");
 const tarifaAoMes = document.querySelector(".wrapper .content .tarifa");
@@ -10,7 +12,7 @@ const displayParcelas = document.querySelector(
   ".slider span .display-parcelas"
 );
 
-const simulador = new Simulador(12, "Elo", 1000);
+const simulador = new Simulador(12, "Visa", 1000);
 
 simulador.calcularPorcentagemDeJuros();
 simulador.calcularJurosSobreValor();
@@ -33,11 +35,22 @@ inputValor.addEventListener("change", (e) => {
   renderizarSimulação();
 });
 
+radioButtons.forEach(radio => {
+  radio.addEventListener("change", (e) => {
+    simulador.setBandeira(e.target.value)
+    simulador.calcularPorcentagemDeJuros();
+    simulador.calcularJurosSobreValor();
+  
+    renderizarSimulação();
+  
+  })
+})
+
 function renderizarSimulação() {
   valorPago.innerHTML = `${simulador.numeroDeParcelas}x R$${(
     (simulador.valor + simulador.jurosEmReais) /
     simulador.numeroDeParcelas
-  ).toFixed(2)}`;
+  ).toFixed(2).replace('.', ',')}`;
 
   taxaAoMes.innerHTML = `${(
     simulador.jurosEmPorcentagem / simulador.numeroDeParcelas

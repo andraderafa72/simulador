@@ -16,9 +16,7 @@ class Simulador {
   }
   // 5, 5000
   calcularPorcentagemDeJuros() {
-    console.log('n', this.numeroDeParcelas);
-    if(this.numeroDeParcelas < 3){
-      console.log('passou');
+    if (this.numeroDeParcelas < 3) {
       this.jurosEmPorcentagem = taxasPorValor[this.valor];
       return;
     }
@@ -28,9 +26,7 @@ class Simulador {
       somaDeJurosDaEmpresaPorParcela += juros[i];
     }
 
-    const chaveDaBandeira =
-      "Elo" || "American Express" || "Hipercard" ? "Elo" : "Visa";
-    const jurosDaBandeira = bandeira[chaveDaBandeira][this.numeroDeParcelas];
+    const jurosDaBandeira = this.bandeira === 'Visa' ? 0 : bandeira[this.numeroDeParcelas];
 
     let jurosEmPorcentagem =
       taxasPorValor[this.valor] +
@@ -38,10 +34,7 @@ class Simulador {
       jurosDaBandeira;
 
     console.log(
-      jurosEmPorcentagem,
-      taxasPorValor[this.valor],
-      somaDeJurosDaEmpresaPorParcela,
-      jurosDaBandeira
+      somaDeJurosDaEmpresaPorParcela, jurosEmPorcentagem, jurosDaBandeira
     );
 
     this.jurosEmPorcentagem = jurosEmPorcentagem;
@@ -91,16 +84,14 @@ const juros = {
 };
 
 const bandeira = {
-  Elo: {
-    3: 1.19,
-    4: 1.18,
-    5: 1.18,
-    6: 1.17,
-    7: 1.07,
-    8: 1.07,
-    9: 1.07,
-    10: 1.05,
-    11: 1.05,
-    12: 1.06,
-  },
+  3: 1.19,
+  4: 1.18,
+  5: 1.18,
+  6: 1.17,
+  7: 1.07,
+  8: 1.07,
+  9: 1.07,
+  10: 1.05,
+  11: 1.05,
+  12: 1.06,
 };
