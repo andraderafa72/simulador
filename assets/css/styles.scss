@@ -9,50 +9,7 @@ body {
   background: #f2f2f2;
 }
 
-input:not([type="radio"]) {
-  width: 100%;
-}
-
-input[type="number"] {
-  padding: 0.85rem 1rem;
-  font-size: 1rem;
-
-  &:focus {
-    outline: none;
-    border: 2px solid #00c039;
-    border-radius: 0.25rem;
-  }
-}
-input[type="range"] {
-  margin-top: 1.5rem;
-  // accent-color: #66ff94;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type="range"] {
-    -webkit-appearance: none;
-    background-color: #ecf1f4;
-    border-radius: 0.5rem;
-    cursor: pointer;
-  }
-
-  input[type="range"]::-webkit-slider-runnable-track {
-    height: 5px;
-    -webkit-appearance: none;
-  }
-
-  input[type="range"]::-webkit-slider-thumb {
-    width: 15px;
-    -webkit-appearance: none;
-    height: 15px;
-    background: #00c039;
-    cursor: pointer;
-    border-radius: 100%;
-    transform: translateY(-5px);
-  }
-}
-
-.container {
+.container-simulador {
   background: #fff;
   max-width: 968px;
   margin: 3rem auto;
@@ -67,6 +24,49 @@ input[type="range"] {
     width: 100%;
     margin-bottom: 1rem;
     font-weight: 500;
+  }
+
+  input:not([type="radio"]) {
+    width: 100%;
+  }
+  
+  input[type="number"] {
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+  
+    &:focus {
+      outline: none;
+      border: 2px solid #00c039;
+      border-radius: 0.25rem;
+    }
+  }
+  input[type="range"] {
+    margin-top: 1.5rem;
+    // accent-color: #66ff94;
+  }
+  
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="range"] {
+      -webkit-appearance: none;
+      background-color: #ecf1f4;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+  
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 5px;
+      -webkit-appearance: none;
+    }
+  
+    input[type="range"]::-webkit-slider-thumb {
+      width: 15px;
+      -webkit-appearance: none;
+      height: 15px;
+      background: #00c039;
+      cursor: pointer;
+      border-radius: 100%;
+      transform: translateY(-5px);
+    }
   }
 
   .right {
@@ -85,7 +85,6 @@ input[type="range"] {
     }
 
     > p{
-      color: #00c039;
       margin-top: 1.5rem;
     }
   }
@@ -190,7 +189,7 @@ input[type="range"] {
   }
 }
 
-.container .right {
+.container-simulador .right {
   padding-left: 2rem;
   .main-info {
     width: 100%;
@@ -237,7 +236,7 @@ input[type="range"] {
       }
 
       p {
-        font-weight: 600;
+        font-weight: 300;
         font-size: 1.5rem;
       }
     }
@@ -270,7 +269,7 @@ input[type="range"] {
 }
 
 @media (max-width: 890px) {
-  .container {
+  .container-simulador {
     flex-direction: column;
     max-width: 600px;
     span {

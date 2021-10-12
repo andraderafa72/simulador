@@ -10,49 +10,7 @@ body {
   background: #f2f2f2;
 }
 
-input:not([type="radio"]) {
-  width: 100%;
-}
-
-input[type="number"] {
-  padding: 0.85rem 1rem;
-  font-size: 1rem;
-}
-
-input[type="number"]:focus {
-  outline: none;
-  border: 2px solid #00c039;
-  border-radius: 0.25rem;
-}
-
-input[type="range"] {
-  margin-top: 1.5rem;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type="range"] {
-    -webkit-appearance: none;
-    background-color: #ecf1f4;
-    border-radius: 0.5rem;
-    cursor: pointer;
-  }
-  input[type="range"]::-webkit-slider-runnable-track {
-    height: 5px;
-    -webkit-appearance: none;
-  }
-  input[type="range"]::-webkit-slider-thumb {
-    width: 15px;
-    -webkit-appearance: none;
-    height: 15px;
-    background: #00c039;
-    cursor: pointer;
-    border-radius: 100%;
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
-  }
-}
-
-.container {
+.container-simulador {
   background: #fff;
   max-width: 968px;
   margin: 3rem auto;
@@ -70,24 +28,66 @@ input[type="range"] {
           justify-content: space-between;
 }
 
-.container span {
+.container-simulador span {
   width: 100%;
   margin-bottom: 1rem;
   font-weight: 500;
 }
 
-.container .right {
+.container-simulador input:not([type="radio"]) {
+  width: 100%;
+}
+
+.container-simulador input[type="number"] {
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+}
+
+.container-simulador input[type="number"]:focus {
+  outline: none;
+  border: 2px solid #00c039;
+  border-radius: 0.25rem;
+}
+
+.container-simulador input[type="range"] {
+  margin-top: 1.5rem;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .container-simulador input[type="range"] {
+    -webkit-appearance: none;
+    background-color: #ecf1f4;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .container-simulador input[type="range"]::-webkit-slider-runnable-track {
+    height: 5px;
+    -webkit-appearance: none;
+  }
+  .container-simulador input[type="range"]::-webkit-slider-thumb {
+    width: 15px;
+    -webkit-appearance: none;
+    height: 15px;
+    background: #00c039;
+    cursor: pointer;
+    border-radius: 100%;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+.container-simulador .right {
   width: 50%;
   padding: 3rem 3rem 3rem 2rem;
 }
 
-.container .left {
+.container-simulador .left {
   width: 50%;
   padding: 3rem 2rem 3rem 3rem;
   border-right: 1px solid #ecf1f4;
 }
 
-.container .left form {
+.container-simulador .left form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,8 +98,7 @@ input[type="range"] {
   gap: 1.5rem;
 }
 
-.container .left > p {
-  color: #00c039;
+.container-simulador .left > p {
   margin-top: 1.5rem;
 }
 
@@ -219,11 +218,11 @@ input[type="range"] {
   border-radius: 100%;
 }
 
-.container .right {
+.container-simulador .right {
   padding-left: 2rem;
 }
 
-.container .right .main-info {
+.container-simulador .right .main-info {
   width: 100%;
   background: #00c039;
   color: #fff;
@@ -247,19 +246,19 @@ input[type="range"] {
   margin-bottom: 1.5rem;
 }
 
-.container .right .main-info span {
+.container-simulador .right .main-info span {
   text-align: center;
   margin-bottom: 0;
   font-weight: normal;
 }
 
-.container .right .main-info h2 {
+.container-simulador .right .main-info h2 {
   font-size: 2.5rem;
   font-family: "Nunito";
   font-weight: 800;
 }
 
-.container .right .wrapper {
+.container-simulador .right .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,8 +270,8 @@ input[type="range"] {
   gap: 1rem;
 }
 
-.container .right .wrapper .content,
-.container .right .wrapper .content-large {
+.container-simulador .right .wrapper .content,
+.container-simulador .right .wrapper .content-large {
   -webkit-box-shadow: 0 4px 24px 0 rgba(11, 11, 11, 0.12);
           box-shadow: 0 4px 24px 0 rgba(11, 11, 11, 0.12);
   display: -webkit-box;
@@ -292,24 +291,24 @@ input[type="range"] {
   border-radius: 1rem;
 }
 
-.container .right .wrapper .content span,
-.container .right .wrapper .content-large span {
+.container-simulador .right .wrapper .content span,
+.container-simulador .right .wrapper .content-large span {
   text-align: center;
   margin-bottom: 0;
   font-weight: normal;
 }
 
-.container .right .wrapper .content p,
-.container .right .wrapper .content-large p {
-  font-weight: 600;
+.container-simulador .right .wrapper .content p,
+.container-simulador .right .wrapper .content-large p {
+  font-weight: 300;
   font-size: 1.5rem;
 }
 
-.container .right .wrapper .content {
+.container-simulador .right .wrapper .content {
   width: calc(50% - 0.5rem);
 }
 
-.container .right .wrapper .content-large {
+.container-simulador .right .wrapper .content-large {
   width: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -317,13 +316,13 @@ input[type="range"] {
           flex-direction: row;
 }
 
-.container .right .wrapper .content-large svg {
+.container-simulador .right .wrapper .content-large svg {
   width: 2.5rem;
   height: 2.5rem;
   margin-right: 0.5rem;
 }
 
-.container .right .wrapper .content-large p {
+.container-simulador .right .wrapper .content-large p {
   font-size: 1rem;
   font-weight: normal;
 }
@@ -334,32 +333,32 @@ input[type="range"] {
 }
 
 @media (max-width: 890px) {
-  .container {
+  .container-simulador {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     max-width: 600px;
   }
-  .container span {
+  .container-simulador span {
     font-size: 0.9rem;
   }
-  .container .left,
-  .container .right {
+  .container-simulador .left,
+  .container-simulador .right {
     width: 100%;
     padding: 2rem;
   }
-  .container .left {
+  .container-simulador .left {
     border-bottom: 1px solid #ecf1f4;
     border-right: none;
   }
-  .container .right .main-info h2 {
+  .container-simulador .right .main-info h2 {
     font-size: 2.25rem;
   }
-  .container .right .wrapper .content span {
+  .container-simulador .right .wrapper .content span {
     font-size: .9rem;
   }
-  .container .right .wrapper .content p {
+  .container-simulador .right .wrapper .content p {
     font-size: 1.25rem;
   }
   .recebimento {
