@@ -14,7 +14,7 @@ class Simulador {
   setBandeira(bandeira) {
     this.bandeira = bandeira;
   }
-  // 5, 5000
+
   calcularPorcentagemDeJuros() {
     if (this.numeroDeParcelas < 3) {
       if(this.bandeira === 'Elo'){
@@ -44,6 +44,14 @@ class Simulador {
     const jurosEmReais = (this.valor * this.jurosEmPorcentagem) / 100;
 
     this.jurosEmReais = jurosEmReais;
+  }
+
+  verificarValor(limite){
+    if(this.valor > limite) {
+      this.erro = true
+    } else {
+      this.erro = false
+    }
   }
 }
 

@@ -1,16 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  background: #f2f2f2;
-}
-
 .container-simulador {
+  font-family: "Roboto", sans-serif;
   background: #fff;
   max-width: 968px;
   margin: 3rem auto;
@@ -68,6 +57,7 @@ body {
     width: 15px;
     -webkit-appearance: none;
     height: 15px;
+    background: #00c039;
     cursor: pointer;
     border-radius: 100%;
     -webkit-transform: translateY(-5px);
@@ -371,4 +361,3 @@ body {
     margin-top: 1rem;
   }
 }
-/*# sourceMappingURL=styles.css.map */
