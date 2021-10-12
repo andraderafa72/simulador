@@ -85,16 +85,16 @@ function renderizarSimulação() {
   )}`;
 
   if (simulador.erro) {
-    mainInfo.style.background = "#f84e10";
+    // mainInfo.style.background = "#f84e10";
     displayValor.style.color = "#f84e10";
     styleError.innerHTML = `
-      input[type="range"]::-webkit-slider-thumb{
+      input[type="range"].input-valor::-webkit-slider-thumb{
         background: #f84e10;
       }
     `;
   } else {
     styleError.innerHTML = ``;
-    mainInfo.style.background = "#00c039";
+    // mainInfo.style.background = "#00c039";
     displayValor.style.color = "#00c039";
   }
 }

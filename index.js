@@ -15,7 +15,7 @@ class Simulador {
   setBandeira(bandeira) {
     this.bandeira = bandeira;
   }
-  // 5, 5000
+
   calcularPorcentagemDeJuros() {
     if (this.numeroDeParcelas < 3) {
       if(this.bandeira === 'Elo'){
@@ -45,6 +45,14 @@ class Simulador {
     const jurosEmReais = (this.valor * this.jurosEmPorcentagem) / 100;
 
     this.jurosEmReais = jurosEmReais;
+  }
+
+  verificarValor(limite){
+    if(this.valor > limite) {
+      this.erro = true
+    } else {
+      this.erro = false
+    }
   }
 }
 
@@ -101,11 +109,12 @@ const bandeira = {
 // APLICAÇÃO NO HTML
 const inputParcelas = document.querySelector(".input-parcelas");
 const inputValor = document.querySelector(".input-valor");
-const radioButtons = document.querySelectorAll('.flag-radio input')
-const limiteInput = document.querySelector('.limite-input')
+const radioButtons = document.querySelectorAll(".flag-radio input");
+const limiteInput = document.querySelector(".limite-input");
+const styleError = document.querySelector("#error-color");
+const limiteDisponivel = document.querySelector(".disponivel");
 
-const limiteDisponivel = document.querySelector('.disponivel')
-
+const mainInfo = document.querySelector(".main-info");
 const valorPago = document.querySelector(".main-info h2");
 const taxaAoMes = document.querySelector(".wrapper .content .taxa");
 const tarifaAoMes = document.querySelector(".wrapper .content .tarifa");
@@ -123,8 +132,8 @@ simulador.calcularJurosSobreValor();
 renderizarSimulação();
 
 limiteInput.addEventListener("input", (e) => {
-  const valor = Number(e.target.value) * 12
-  limiteDisponivel.innerHTML = `R$${valor.toFixed(2).replace('.', ',')}`
+  const valor = Number(e.target.value) * 12;
+  limiteDisponivel.innerHTML = `R$${valor.toFixed(2).replace(".", ",")}`;
 });
 
 inputParcelas.addEventListener("input", (e) => {
@@ -140,45 +149,63 @@ inputValor.addEventListener("input", (e) => {
   simulador.calcularPorcentagemDeJuros();
   simulador.calcularJurosSobreValor();
 
+  simulador.verificarValor(limiteInput.value ? Number(limiteInput.value) * 12 : 20000);
+
   renderizarSimulação();
 });
 
-radioButtons.forEach(radio => {
+radioButtons.forEach((radio) => {
   radio.addEventListener("change", (e) => {
-    simulador.setBandeira(e.target.value)
+    simulador.setBandeira(e.target.value);
     simulador.calcularPorcentagemDeJuros();
     simulador.calcularJurosSobreValor();
-  
+
     renderizarSimulação();
   });
-})
+});
 
 function renderizarSimulação() {
   valorPago.innerHTML = `${simulador.numeroDeParcelas}x R$${(
     (simulador.valor + simulador.jurosEmReais) /
     simulador.numeroDeParcelas
-  ).toFixed(2).replace('.', ',')}`;
+  )
+    .toFixed(2)
+    .replace(".", ",")}`;
 
   taxaAoMes.innerHTML = `${(
     simulador.jurosEmPorcentagem / simulador.numeroDeParcelas
   ).toFixed(2)}%`;
-  tarifaAoMes.innerHTML = `R$${String((
-    simulador.jurosEmReais / simulador.numeroDeParcelas
-  ).toFixed(2)).replace('.', ',')}`;
+  tarifaAoMes.innerHTML = `R$${String(
+    (simulador.jurosEmReais / simulador.numeroDeParcelas).toFixed(2)
+  ).replace(".", ",")}`;
 
-  cliente.innerHTML = `R$${String((
-    simulador.valor - simulador.jurosEmReais
-  ).toFixed(2)).replace('.', ',')}`;
-  
-  tarifaTotal.innerHTML = `R$${String((
-    simulador.jurosEmReais
-  ).toFixed(2)).replace('.', ',')}`;
+  cliente.innerHTML = `R$${String(
+    (simulador.valor - simulador.jurosEmReais).toFixed(2)
+  ).replace(".", ",")}`;
+
+  tarifaTotal.innerHTML = `R$${String(
+    simulador.jurosEmReais.toFixed(2)
+  ).replace(".", ",")}`;
 
   displayParcelas.innerHTML = `${simulador.numeroDeParcelas}x`;
   displayValor.innerHTML = `R$${String(simulador.valor.toFixed(2)).replace(
     ".",
     ","
   )}`;
+
+  if (simulador.erro) {
+    mainInfo.style.background = "#f84e10";
+    displayValor.style.color = "#f84e10";
+    styleError.innerHTML = `
+      input[type="range"]::-webkit-slider-thumb{
+        background: #f84e10;
+      }
+    `;
+  } else {
+    styleError.innerHTML = ``;
+    mainInfo.style.background = "#00c039";
+    displayValor.style.color = "#00c039";
+  }
 }
 
 const conversorDeRangeParaValor = {
