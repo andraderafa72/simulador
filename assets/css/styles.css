@@ -84,9 +84,6 @@ input[type="range"] {
 .container .left {
   width: 50%;
   padding: 3rem 2rem 3rem 3rem;
-}
-
-.container .left {
   border-right: 1px solid #ecf1f4;
 }
 
@@ -99,6 +96,11 @@ input[type="range"] {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 1.5rem;
+}
+
+.container .left > p {
+  color: #00c039;
+  margin-top: 1.5rem;
 }
 
 .flag-radio {

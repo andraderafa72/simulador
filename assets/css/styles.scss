@@ -73,17 +73,20 @@ input[type="range"] {
     width: 50%;
     padding: 3rem 3rem 3rem 2rem;
   }
+  
   .left {
     width: 50%;
     padding: 3rem 2rem 3rem 3rem;
-  }
-
-  .left {
     border-right: 1px solid #ecf1f4;
     form {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+    }
+
+    > p{
+      color: #00c039;
+      margin-top: 1.5rem;
     }
   }
 }
