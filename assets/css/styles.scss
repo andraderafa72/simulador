@@ -262,6 +262,61 @@ body {
   }
 }
 
+.container-faq{
+  background: #fff;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08);
+  padding: 1rem 2rem;
+  transition: .4s;
+  cursor: 'pointer';
+  max-width: 968px;
+  margin: 0 auto;
+  border-radius: 16px;
+  // display: flex;
+  // align-items: center;
+  // flex-direction: column;
+  
+  
+  .question{
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span{ 
+      font-weight: bold;
+      font-size: 1.15rem;
+      line-height: 160%;
+    }
+    svg{
+      transition: .4s;
+      width: 32px;
+      height: 32px;
+      transform: rotate(90deg);
+    }
+  }
+  &.visible{
+    .question svg{
+      transform: rotate(0);
+    }
+  }
+
+  .answer{
+    width: 100%;
+    overflow: hidden;
+    max-height: 0px;
+    opacity: 0;
+    transition: .4s;
+    
+    &.visible{
+      max-height: 1000px;
+      opacity: 1;
+    }
+    p{
+      margin-top: 1rem;
+      text-align: justify;
+    }
+  }
+}
+
 .slider span strong {
   color: #00c039;
   font-weight: 500;
