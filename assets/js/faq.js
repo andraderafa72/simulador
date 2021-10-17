@@ -1,15 +1,17 @@
-const containerFaq = document.querySelector(".container-faq");
-const resposta = document.querySelector(".container-faq .answer");
-const pergunta = document.querySelector(".container-faq .question");
+const containerFaq = document.querySelectorAll(".container-faq");
+const resposta = document.querySelectorAll(".container-faq .answer");
+const pergunta = document.querySelectorAll(".container-faq .question");
 
-containerFaq.addEventListener('click', e => {
-  if(containerFaq.classList.contains('visible')){
-    containerFaq.classList.remove('visible')
-    pergunta.classList.remove('visible')
-    resposta.classList.remove('visible')
-  } else {
-    containerFaq.classList.add('visible')
-    pergunta.classList.add('visible')
-    resposta.classList.add('visible')
-  }
+containerFaq.forEach((container, index) => {
+  container.addEventListener('click', e => {
+    if(containerFaq[index].classList.contains('visible')){
+      containerFaq[index].classList.remove('visible')
+      pergunta[index].classList.remove('visible')
+      resposta[index].classList.remove('visible')
+    } else {
+      containerFaq[index].classList.add('visible')
+      pergunta[index].classList.add('visible')
+      resposta[index].classList.add('visible')
+    }
+  });
 })

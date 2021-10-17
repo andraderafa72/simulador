@@ -326,6 +326,12 @@ body {
   font-weight: normal;
 }
 
+.faq-area {
+  max-width: 968px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
 .container-faq {
   background: #fff;
   -webkit-box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08);
@@ -334,9 +340,12 @@ body {
   -webkit-transition: .4s;
   transition: .4s;
   cursor: 'pointer';
-  max-width: 968px;
-  margin: 0 auto;
   border-radius: 16px;
+  width: 100%;
+}
+
+.container-faq + .container-faq {
+  margin-top: 1rem;
 }
 
 .container-faq .question {
@@ -361,8 +370,12 @@ body {
 .container-faq .question svg {
   -webkit-transition: .4s;
   transition: .4s;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
+  max-width: 28px;
+  max-height: 28px;
+  min-width: 28px;
+  min-height: 28px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
@@ -387,8 +400,17 @@ body {
 }
 
 .container-faq .answer p {
-  margin-top: 1rem;
+  margin: 1rem 0 .25rem;
   text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .container-faq {
+    padding: .5rem 1rem;
+  }
+  .container-faq .question span {
+    font-size: .9rem;
+  }
 }
 
 .slider span strong {

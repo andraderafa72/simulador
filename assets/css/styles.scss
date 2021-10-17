@@ -262,19 +262,27 @@ body {
   }
 }
 
+.faq-area{
+  max-width: 968px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
 .container-faq{
   background: #fff;
   box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08);
   padding: 1rem 2rem;
   transition: .4s;
   cursor: 'pointer';
-  max-width: 968px;
-  margin: 0 auto;
   border-radius: 16px;
+  width: 100%;
   // display: flex;
   // align-items: center;
   // flex-direction: column;
   
+  & + .container-faq{
+    margin-top: 1rem;
+  }
   
   .question{
     width: 100%; 
@@ -288,8 +296,12 @@ body {
     }
     svg{
       transition: .4s;
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
+      max-width: 28px;
+      max-height: 28px;
+      min-width: 28px;
+      min-height: 28px;
       transform: rotate(90deg);
     }
   }
@@ -311,8 +323,19 @@ body {
       opacity: 1;
     }
     p{
-      margin-top: 1rem;
+      margin: 1rem 0 .25rem;
       text-align: justify;
+    }
+  }
+}
+
+@media(max-width: 768px){
+  .container-faq{
+    padding: .5rem 1rem;
+    .question{
+      span{
+        font-size: .9rem;
+      }
     }
   }
 }
